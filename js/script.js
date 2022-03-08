@@ -1,19 +1,19 @@
 /* 
 TRACCIA:
 
-Visualizzare in pagina 5 numeri casuali.
-Da lì parte un timer di 30 secondi.
-Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
+Visualizzare in pagina 5 numeri casuali. //!check
+Da lì parte un timer di 30 secondi.//!check
+Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().//!check
 Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati. */
 
-//TODO FAR SPARIRE I NUMERI DENTRO I DIV E CONFRONTARLI CON QUELLI INSERITI DALL'UTENTE
+//TODO CONFRONTARLI CON QUELLI INSERITI DALL'UTENTE
 
 let numbersDisplay = document.querySelector("#numberDisplay");
 
 let randomNumbers = [];
 
 
-let divNumberContainer = "";
+
 
 let userNumbers = [];
 
@@ -32,7 +32,6 @@ console.log(randomInt(5 , randomNumbers));
 for(let i =0; i < randomNumbers.length; i++) {
 
     divNumberContainer = document.createElement("div");
-    console.log(divNumberContainer)
     divNumberContainer.classList.add("numberContainer" , "d-flex" , "justify-content-center" , "align-items-center" , "fs-1");
     divNumberContainer.style.width = `calc(100% / ${randomNumbers.length})`
     numbersDisplay.appendChild(divNumberContainer);
@@ -40,8 +39,9 @@ for(let i =0; i < randomNumbers.length; i++) {
 
 }
 
-setTimeout(clearNumbers , 30000)
-setTimeout(userInput , 30000)
+setTimeout(clearNumbers , 3000)
+setTimeout(userInput , 3000)
+
 
 
 
@@ -64,7 +64,6 @@ console.log(userNumbers)
 function randomInt(howMuch,where){
     while(check){
         let randomInt = Math.floor(Math.random() * (howMuch - 1) + 1);
-        console.log(randomInt)
         randomNumbers.push(randomInt);
 
         /* if(!randomNumbers.includes(randomInt)){
@@ -91,12 +90,15 @@ function userInput(){
 /* funzione che cancella l'innerhtml per ogni item della nodeList */
 function clearNumbers(){
     let divNumber = document.querySelectorAll(".numberContainer")
-    console.log(divNumber)
     for(let i = 0; i < divNumber.length; i++){
         divNumber[i].innerHTML = ""
     }
     
 }
+
+
+
+
 
 
 

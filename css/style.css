@@ -1,0 +1,11 @@
+#numberDisplay{
+    margin: 0 auto;
+    height: 100px;
+    background-color: yellowgreen;
+}
+
+.numberContainer{
+    height: 100%;
+    background-color: rgb(255, 255, 121);
+    border: 1px solid green;
+}

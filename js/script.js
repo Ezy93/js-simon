@@ -4,9 +4,9 @@ TRACCIA:
 Visualizzare in pagina 5 numeri casuali. //!check
 Da lì parte un timer di 30 secondi.//!check
 Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().//!check
-Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati. */
+Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati. */ //!check
 
-//TODO CONFRONTARLI CON QUELLI INSERITI DALL'UTENTE
+
 
 let numbersDisplay = document.querySelector("#numberDisplay");
 
@@ -50,7 +50,7 @@ setTimeout(() =>{
         }
         
     }
-    console.log(`hai indovinato un totale di: ${guessNumber.length} numeri`)
+    document.getElementById("guess").innerHTML = `hai indovinato un totale di: ${guessNumber.length} numeri`
 },30000)
 
 console.log(guessNumber)

@@ -13,6 +13,7 @@ let numbersDisplay = document.querySelector("#numberDisplay");
 let randomNumbers = [];
 
 
+let divNumberContainer = "";
 
 let userNumbers = [];
 
@@ -30,7 +31,7 @@ console.log(randomInt(5 , randomNumbers));
 
 for(let i =0; i < randomNumbers.length; i++) {
 
-    let divNumberContainer = document.createElement("div");
+    divNumberContainer = document.createElement("div");
     console.log(divNumberContainer)
     divNumberContainer.classList.add("numberContainer" , "d-flex" , "justify-content-center" , "align-items-center" , "fs-1");
     divNumberContainer.style.width = `calc(100% / ${randomNumbers.length})`
@@ -39,7 +40,9 @@ for(let i =0; i < randomNumbers.length; i++) {
 
 }
 
-setTimeout(userInput , 10000)
+setTimeout(clearNumbers , 30000)
+setTimeout(userInput , 30000)
+
 
 
 
@@ -84,6 +87,17 @@ function userInput(){
         userNumbers.push(userIntInput);
     }
 };
+
+/* funzione che cancella l'innerhtml per ogni item della nodeList */
+function clearNumbers(){
+    let divNumber = document.querySelectorAll(".numberContainer")
+    console.log(divNumber)
+    for(let i = 0; i < divNumber.length; i++){
+        divNumber[i].innerHTML = ""
+    }
+    
+}
+
 
 
 

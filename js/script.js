@@ -12,7 +12,7 @@ let numbersDisplay = document.querySelector("#numberDisplay");
 
 let randomNumbers = [];
 
-
+let guessNumber = [];
 
 
 let userNumbers = [];
@@ -39,10 +39,21 @@ for(let i =0; i < randomNumbers.length; i++) {
 
 }
 
-setTimeout(clearNumbers , 3000)
-setTimeout(userInput , 3000)
+setTimeout(clearNumbers , 30000)
+setTimeout(userInput , 30000)
 
+setTimeout(() =>{
+    for(let i = 0; i < randomNumbers.length; i++){
+        if(randomNumbers[i] === userNumbers[i]){
+            guessNumber.push(userNumbers[i])
+            console.log(`hai indovinato il numero: ${guessNumber[i]}`)
+        }
+        
+    }
+    console.log(`hai indovinato un totale di: ${guessNumber.length} numeri`)
+},30000)
 
+console.log(guessNumber)
 
 
 
